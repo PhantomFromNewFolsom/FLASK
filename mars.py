@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, url_for
 
 app = Flask(__name__)
 
@@ -20,6 +20,33 @@ def promote():
 Мы сделаем обитаемыми безжизненные пока планеты.</br>
 И начнем с Марса!</br>
 Присоединяйся!</p>'''
+
+
+@app.route('/image_mars')
+def photo_mars():
+    return f"""<!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <link rel="stylesheet" 
+                    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+                    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+                    crossorigin="anonymous">
+                    <title>Привет, Марс!</title>
+                  </head>
+                  <body>
+                    <h1>Жди нас, Марс!</h1>
+                    <img src="{url_for('static', filename='img/mars.png')}" alt="здесь должна была быть
+                     картинка, но не нашлась">
+                    <p>Здесь могла быть ваша реклама, но пока у нас нет</br> 
+                    спонсоров, так что купите пожалуйста рекламу(</br></p>
+                    <div class="alert alert-danger" role="alert">
+                      P. S. Андрей Юрьевич, зачтите задачу пожалуйста, там не указано, какая конкретно должна быть
+                    подпись
+                    </div>
+                  </body>
+                </html>"""
 
 
 if __name__ == '__main__':
