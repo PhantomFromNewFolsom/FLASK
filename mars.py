@@ -217,19 +217,19 @@ def chosen_planet(planet_name):
                         <h1>Моё предложение: {planet_name}</h1>
                         <h3>Эта планета близка к Земле</h3>
                         <div class="alert alert-dark" role="alert">
-                          Человечество вырастает из детства.
+                          Там много полезных ресурсов
                         </div>
                         <div class="alert alert-success" role="alert">
-                          Человечеству мала одна планета.
+                          На ней есть вода и атмосфера
                         </div>
                         <div class="alert alert-secondary" role="alert">
-                          Мы сделаем обитаемыми безжизненные пока планеты.
+                          У неё есть некоторое магнитное поле
                         </div>
                         <div class="alert alert-warning" role="alert">
-                          И начнем с Марса!
+                          Она очень красива
                         </div>
                         <div class="alert alert-danger" role="alert">
-                          Присоединяйся!
+                          Присоединяйся, мы колонизируем {planet_name}!
                         </div>
                       </body>
                     </html>"""
