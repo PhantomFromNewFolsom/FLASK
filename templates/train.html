@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if 'строитель' in prof or 'инженер' in prof %}
+        <h2>Инженерные симуляторы</h2>
+        {% set ur = url_for('static', filename='img/mars.png') %}
+        <img src="/static/img/ship.png" alt="здесь должна была быть картинка, но не нашлась">
+    {% else %}
+        <h2>Научные симуляторы</h2>
+        <img src="/static/img/ship2.png" alt="здесь должна была быть картинка, но не нашлась">
+    {% endif %}
+{% endblock %}
