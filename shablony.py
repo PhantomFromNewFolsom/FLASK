@@ -20,5 +20,14 @@ def l_pr(list):
     return render_template('lst.html', title='Профессии', prfs=prfs, par=list)
 
 
+@app.route('/answer')
+@app.route('/auto_answer')
+def ans():
+    d = {'title': 'Анкета', 'surname': 'PushKing', 'name': 'AlexUnder', 'education': 'Высшее',
+         'profession': 'космодесантник', 'sex': 'male',
+         'motivation': 'Я люблю красный! Готов к встрече с враждебными марсианами.', 'ready': True}
+    return render_template('auto_answer.html', title=d['title'], dictn=d)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1', debug=True)

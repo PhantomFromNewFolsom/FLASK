@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block hed %}
+<link rel="stylesheet" href="static/css/mystyle1.css">
+{% endblock %}
+{% block content %}
+<h4>Фамилия: <span class="fact">{{dictn['surname']}}</span></h4>
+<h4>Имя: <span class="fact">{{dictn['name']}}</span></h4>
+<h4>Образование: <span class="fact">{{dictn['education']}}</span></h4>
+<h4>Профессия: <span class="fact">{{dictn['profession']}}</span></h4>
+<h4>Пол: <span class="fact">{{dictn['sex']}}</span></h4>
+<h4>Мотивация: <span class="fact">{{dictn['motivation']}}</span></h4>
+<h4>Готовы остаться на Марсе? <span class="fact">{{dictn['ready']}}</span></h4>
+{% endblock %}
