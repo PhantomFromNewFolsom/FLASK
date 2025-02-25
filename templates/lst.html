@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Список профессий</h3>
+    {% if par == 'ol' %}
+        <ol>
+        {% for item in prfs %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ol>
+    {% elif par == 'ul' %}
+        <ul>
+        {% for item in prfs %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <h4>Неверный параметр</h4>
+    {% endif %}
+{% endblock %}

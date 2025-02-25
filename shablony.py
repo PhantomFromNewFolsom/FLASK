@@ -14,5 +14,11 @@ def tran(prof):
     return render_template('train.html', title='Тренировка', prof=prof)
 
 
+@app.route('/list_prof/<list>')
+def l_pr(list):
+    prfs = ['инженер-исследователь', 'пилот', 'строитель', 'экобиолог', 'врач', 'климатолог', 'метеоролог', 'астролог']
+    return render_template('lst.html', title='Профессии', prfs=prfs, par=list)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1', debug=True)
