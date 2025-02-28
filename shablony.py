@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
@@ -65,6 +65,17 @@ def dist():
 @app.route('/table/<sex>/<int:old>')
 def table(sex, old):
     return render_template('table.html', title='Авторизация', sex=sex, old=old)
+
+
+@app.route('/load_photo', methods=['POST', 'GET'])
+def form_sample():
+    if request.method == 'GET':
+        return render_template('photocard.html', title='Картинка')
+    elif request.method == 'POST':
+        f = request.files['file']
+        print(f)
+        f.save('./static/save_img/p.png')
+        return render_template('photocard.html', title='Картинка')
 
 
 if __name__ == '__main__':
