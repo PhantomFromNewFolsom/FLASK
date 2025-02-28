@@ -56,5 +56,11 @@ def login():
     return render_template('double_defend.html', title='Авторизация', form=form)
 
 
+@app.route('/distribution')
+def dist():
+    lst = ['Александр Пушкин', 'Михаил Лермонтов', 'Дуглас Адамс', 'Михаил Булгаков', 'О. Генри']
+    return render_template('distribution.html', title='Авторизация', lst=lst)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1', debug=True)

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block hed %}
+<link rel="stylesheet" href="static/css/dist.css">
+{% endblock %}
+
+{% block content %}
+<h1>Размещение по каютам</h1>
+{% set k = "Каюта № " %}
+<ul>
+    {% for user in lst %}
+    <li>{{ user }} - {{k}} {{ loop.index }} {% if loop.first %} - капитан корабля {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
