@@ -62,5 +62,10 @@ def dist():
     return render_template('distribution.html', title='Авторизация', lst=lst)
 
 
+@app.route('/table/<sex>/<int:old>')
+def table(sex, old):
+    return render_template('table.html', title='Авторизация', sex=sex, old=old)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1', debug=True)
