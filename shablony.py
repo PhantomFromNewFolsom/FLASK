@@ -78,5 +78,10 @@ def form_sample():
         return render_template('photocard.html', title='Картинка')
 
 
+@app.route('/carousel', methods=['POST', 'GET'])
+def carousel():
+    return render_template('carousel.html', title='Картинка')
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1', debug=True)

@@ -1,0 +1,13 @@
+.carousel {
+  height: 800px !important;
+}
+.carousel-inner img {
+  height: 800px !important;
+  margin: 0 auto;
+}
+.carousel-indicators li {
+  border-color: #000;
+}
+.carousel-indicators .active {
+  background-color: #000;
+}
