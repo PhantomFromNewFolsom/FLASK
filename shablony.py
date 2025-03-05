@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, url_for
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
@@ -78,9 +78,28 @@ def form_sample():
         return render_template('photocard.html', title='Картинка')
 
 
-@app.route('/carousel', methods=['POST', 'GET'])
+@app.route('/carousel')
 def carousel():
-    return render_template('carousel.html', title='Картинка')
+    return render_template('carousel.html', title='Карусель')
+
+
+n = 0
+images = ['dino.png', 'female_ast.png', 'predatelstvo.jpg', 'male_ch.jpg']
+
+
+@app.route('/gallery', methods=['POST', 'GET'])
+def gallery():
+    global n, images
+    if request.method == 'GET':
+        return render_template('gallery.html', title='Галерея',
+                               images=images)
+    elif request.method == 'POST':
+        n += 1
+        f = request.files['file']
+        f.save(f'./static/save_img/p{n}.png')
+        images.append(f'p{n}.png')
+        return render_template('gallery.html', title='Картинка',
+                               images=images, ln=len(images))
 
 
 if __name__ == '__main__':
