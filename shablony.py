@@ -1,4 +1,7 @@
-from flask import Flask, render_template, redirect, request, url_for
+from random import choice
+import json
+
+from flask import Flask, render_template, redirect, request
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
@@ -100,6 +103,16 @@ def gallery():
         images.append(f'p{n}.png')
         return render_template('gallery.html', title='Картинка',
                                images=images, ln=len(images))
+
+
+@app.route('/member')
+def member():
+    with open('templates/members.json', encoding='utf-8') as members:
+        data = json.load(members)
+    sp = []
+    for key, value in data.items():
+        sp.append(value)
+    return render_template('member.html', title='Member', member=choice(sp))
 
 
 if __name__ == '__main__':
